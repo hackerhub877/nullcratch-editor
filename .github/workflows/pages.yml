@@ -32,13 +32,13 @@ jobs:
       - name: 依存関係をインストール
         run: npm ci
 
-      - name: Nullcratchをビルド
-        run: npm run build --workspace @scratch/scratch-gui
+      - name: Nullcratchを全体ビルド
+        run: npm run build
 
       - name: GitHub Pages設定
         uses: actions/configure-pages@v5
 
-      - name: ビルド成果物をアップロード
+      - name: Pages用ファイルをアップロード
         uses: actions/upload-pages-artifact@v3
         with:
           path: packages/scratch-gui/dist
